@@ -1,0 +1,45 @@
+﻿@model PXLApp.Models.Handboek
+
+@{
+    ViewData["Title"] = "Verwijder handboek";
+}
+
+<h1>Verwijder handboek</h1>
+
+<h3>Zeker dat je dit wil verwijderen?</h3>
+<div>
+    @*<h4>Handboek</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KostPrijs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KostPrijs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uitgiftedatum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uitgiftedatum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Afbeelding)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Afbeelding)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HandboekId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Terug naar overzicht</a>
+    </form>
+</div>

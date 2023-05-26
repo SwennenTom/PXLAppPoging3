@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PXLApp.Models.Handboek>
+
+@{
+    ViewData["Title"] = "Handboeken";
+}
+
+<h1>Handboeken</h1>
+
+<p>
+    <a asp-action="Create"><img src="/images/plus.png" style="width: 35px;" alt="Nieuw" /></a>
+</p>
+<table class="table">
+    <thead>
+       @* <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KostPrijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uitgiftedatum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afbeelding)
+            </th>
+            <th></th>
+        </tr>*@
+    </thead>
+    <tbody>
+        <div class="card-container">
+@foreach (var item in Model) {
+    <partial name="handboekcard" model="item" />
+
+        @*<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KostPrijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uitgiftedatum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afbeelding)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HandboekId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HandboekId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HandboekId">Delete</a>
+            </td>
+        </tr>*@
+}
+        </div>
+    </tbody>
+</table>

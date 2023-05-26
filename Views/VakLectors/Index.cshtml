@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PXLApp.Models.VakLector>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Overzicht toegewezen vakken</h1>
+
+<p>
+    <a asp-action="Create"><img src="/images/plus.png" style="width: 35px;" alt="Nieuw" /></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lector)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vak.VakNaam)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Lector.Gebruiker.Voornaam)
+                @Html.DisplayFor(modelItem => item.Lector.Gebruiker.Naam)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VakLectorId">Bewerk</a> |
+                <a asp-action="Details" asp-route-id="@item.VakLectorId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.VakLectorId">Verwijder</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

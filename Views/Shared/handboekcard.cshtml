@@ -1,0 +1,25 @@
+﻿@model PXLApp.Models.Handboek
+
+<div class="card card-outline-dark border-dark m-1 p-1" style="width: 250px;">
+    <div class="bg-faded p-1 text-center">
+        <h4>
+            @Model.Titel
+        </h4>
+        
+            <img src="images/Book.jpg" style="width: 200px" alt="placeholder" /><br />
+        <p>
+                Kostprijs @Model.KostPrijs Euro <br />
+                Uitgiftedatum @Model.Uitgiftedatum?.ToString("dd/MM/yyyy")
+        </p>
+        
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+    <div>
+        <a class="p-1 m-1" asp-action="Delete" asp-route-id="@Model.HandboekId">Verwijder</a>
+    </div>
+    <div >
+            <a class="p-1 m-1" asp-action="Edit" asp-route-id="@Model.HandboekId">Bewerk</a>
+    </div>
+    </div>
+    
+</div>

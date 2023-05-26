@@ -1,0 +1,24 @@
+﻿@model PXLApp.Models.Lector
+
+<div class="card card-outline-dark border-dark m-1 p-1" style="width: 250px;">
+    <div class="bg-faded p-1 text-center">
+        <h4>
+            @Model.Gebruiker.Voornaam @Model.Gebruiker.Naam
+            <img src="~/images/Person.jpg" style="width: 200px" alt="placeholder" />
+            <span class="badge bg-dark" style="float:right">
+                @Model.Gebruiker.Email
+            </span>
+        </h4>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <a class="p-1 m-1" asp-action="Delete" asp-route-id="@Model.LectorId">Verwijder</a>
+        </div>
+        <div>
+            <a class="p-1 m-1" asp-action="Details" asp-route-id="@Model.LectorId">Details</a>
+        </div>
+        <div>
+            <a class="p-1 m-1" asp-action="Edit" asp-route-id="@Model.LectorId">Bewerk</a>
+        </div>
+    </div>
+</div>

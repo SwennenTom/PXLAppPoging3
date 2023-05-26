@@ -1,0 +1,38 @@
+﻿@model PXLApp.Models.Inschrijving
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Uitschrijven</h1>
+
+<h3>Ben je zeker dat je deze inschrijving ongedaan wil maken?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Student)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Student.Gebruiker.Voornaam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VakLector)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VakLector.Vak.VakNaam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcademieJaar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcademieJaar.StartDatum)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="InschrijvingId" />
+        <input type="submit" value="Verwijder" class="btn btn-danger" /> |
+        <a asp-action="Index">Terug naar overzicht</a>
+    </form>
+</div>

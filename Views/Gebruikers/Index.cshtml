@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PXLApp.Models.Gebruiker>
+
+@{
+    ViewData["Title"] = "Gebruikers";
+}
+
+<h1>Gebruikers</h1>
+
+<p>
+    <a asp-action="Create"><img src="/images/plus.png" style="width: 35px;" alt="Nieuw"/></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <div class="card-container">
+            @foreach (var item in Model) {
+                <partial name="gebruikercard" model="item"/>
+            }
+        </div>
+    </tbody>
+</table>

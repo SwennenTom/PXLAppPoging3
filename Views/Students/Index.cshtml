@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PXLApp.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Overzicht studenten</h1>
+<hr />
+<br />
+<h5>Zoek student</h5>
+<form class="mb-1 pb-1 p-1 m-1" method="get" action="@Url.Action("Search", "Students")">
+    <input type="text" name="searchTerm" placeholder="Geef zoekterm" />
+    <button type="submit">Zoek</button>
+</form>
+
+<p>
+    <a asp-action="Create"><img src="/images/plus.png" style="width: 35px;" alt="Nieuw" /></a>
+</p>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+
+        <div class="card-container">
+            @foreach (var item in Model)
+            {
+                <partial name="studentcard" model="item" />
+            }
+        </div>
+
+    </tbody>
+</table>

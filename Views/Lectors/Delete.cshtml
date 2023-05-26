@@ -1,0 +1,27 @@
+﻿@model PXLApp.Models.Lector
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Verwijder lector</h1>
+
+<h3>Ben je zeker dat je deze lector wil verwijderen?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gebruiker)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gebruiker.Email)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="LectorId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Terug naar overzicht</a>
+    </form>
+</div>
